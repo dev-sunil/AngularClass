@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+<!-- <body ng-app="eshop" ng-controller="eshopController">
+    <p>English :
+        <input ng-model="e">
+    </p>
+    <p>MIL :
+        <input ng-model="m">
+    </p>
+    <p>history :
+        <input ng-model="h">
+    </p>
+    <p>
+        <button ng-click="add()">avrage</button>
+    </p>
+
+<h2>The average is = {{average}}</h2>
+
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+    // body...
+    $scope.add = function() {
+        // body...
+        var s1 = parseFloat($scope.e);
+        var s2 = parseFloat($scope.m);
+        var s3 = parseFloat($scope.h);
+
+       $scope.average = (s1 + s2 + s3)/3;
+    }
+
+
+});
+</script> -->
+
+<body ng-app="eshop" ng-controller="eshopController">
+    <p>radious :
+        <input ng-model="a">
+    </p>
+    <p>
+        <button ng-click="circum()">circum</button>
+    </p>
+       <p>
+        <button ng-click="area()">area</button>
+    </p>
+    <h2>The circum is = {{circumis}}</h2>
+    <h2>The area is = {{radiousis}}</h2>
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+
+    $scope.circum = function() {
+
+        var pi = 3.14;
+        var radious = parseFloat($scope.a);
+       
+        $scope.circumis = 2*pi*radious;
+
+    };
+    $scope.area = function() {
+
+        var pi = 3.14;
+        var radious = parseFloat($scope.a);
+       
+        $scope.radiousis = pi*radious*radious;
+        ;
+
+    };
+
+
+});
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app='docsapp' ng-controller='docsappController'>
+    <table class="table">
+        <thead>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>contact</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in docsData">
+                <th>{{x.id}}</th>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>
+                    <h3>Contact</h3>
+                    <p ng-repeat="y in x.contact">
+                        <span>{{y.type}} : {{y.value}}</span>
+                    </p>
+                    <h3>address</h3>
+                    <p>
+                        <span>{{x.address.lane}}</span>
+                        <span>{{x.address.lane2}}</span>
+                        <span>{{x.address.lane3}}</span>
+                        <span>{{x.address.city}}</span>
+                        
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+    var app = angular.module('docsapp', [])
+    app.controller('docsappController', function($scope) {
+        $scope.docsData = [{
+                id: 1,
+                name: 'Harish',
+                age: 20,
+                contact: [
+                    { type: 'mob', value: '3232322323' },
+                    { type: 'email', value: 'xyz@mail.com' },
+                    { type: 'landline', value: 768768767678 },
+                    { type: 'fax', value: 986756542244 }
+                ],
+                address: {
+                lane: 'marathallii',
+                lane2: 'marathallii',
+                lane3: 'marathallii',
+                city: 'marathallii'
+            }
+            },
+            
+        ];
+
+    });
+    </script>
+</body>
+
+</html>

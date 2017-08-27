@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+
+<body ng-app="eshop" ng-controller="eshopCtrl">
+    <p>Id :
+        <input ng-model="product.id"> </p>
+    <p>Name :
+        <input ng-model="product.name">
+    </p>
+    <p>Cost :
+        <input ng-model="product.cost">
+    </p>
+    <button ng-click="saveProduct()">Add Product</button>
+
+
+    <table class="table">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Act</th>
+        <tr  ng-repeat="x in products">
+            <td>{{x.id}}</td>
+            <td>{{$index}}{{x.name}}</td>
+            <td>{{x.cost}}</td>
+            <td>
+                <button ng-click="deleteProduct($index)">delete</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+var app = angular.module('eshop', []);
+
+app.run(function($rootScope) {
+    $rootScope.products = [{
+        id: 1,
+        name: 'Apple',
+        cost: 2000
+    }, {
+        id: 1,
+        name: 'Orange',
+        cost: 3000
+    }, {
+        id: 1,
+        name: 'Banana',
+        cost: 7000
+    },
+    ];
+
+    });
+
+
+app.service('Product', function($rootScope) {
+
+
+    this.addProduct = function(product) {
+        $rootScope.products.push(product)
+
+    }
+    this.removeProduct = function(x) {
+        $rootScope.products.splice(x,1);
+    }
+});
+
+app.controller('eshopCtrl', function($scope, Product) {
+    $scope.saveProduct = function() {
+        // $scope.products.push({id : $scope.id,name : $scope.name, cost : $scope.cost})
+        Product.addProduct($scope.product);
+
+    }
+    $scope.deleteProduct = function (index) {
+            Product.removeProduct(index);
+    }
+
+});
+</script>
+
+</html>

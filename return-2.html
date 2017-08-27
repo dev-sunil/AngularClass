@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src=".bootstrap.min.js"></script>
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+
+<body ng-app="eshop" ng-controller="eshopController" ng-init=" docData = getDocs(); ptnsData = getPtns();">
+    {{docData}}
+    {{ptnsData}}
+
+
+
+       <!--  <table class="table">
+        <thead>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>contact</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in docs">
+                <th>{{x.id}}</th>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>
+                <p ng-repeat="y in x.contact">
+                    <span>{{y.type}} : {{y.value}}</span>
+                </p>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+    // body...
+
+    $scope.getDocs = function() {
+        var docs = [{
+                id: 1,
+                name: 'mohan',
+                specility: 'dental',
+                age: 40
+            },
+
+            {
+                id: 2,
+                name: 'raj',
+                specility: 'cardio',
+                age: 30
+            }
+
+        ];
+
+        return docs;
+
+    }
+    $scope.getPtns = function() {
+        var ptns = [{
+                 id: 1,
+                name: 'ravi',
+                specility: 'headach',
+                wardNo: 20
+            },
+
+            {
+                id: 2,
+                name: 'raj',
+                specility: 'backpain',
+                wardNo: 2
+            }
+
+        ];
+
+        return ptns;
+
+    }
+
+});
+</script>
+
+</html>

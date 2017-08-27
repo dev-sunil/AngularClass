@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <style>
+    span {
+        color: ;
+    }
+    </style>
+</head>
+
+<body ng-app="eshop" ng-controller="eshopController">
+    <p>name :
+        <input type="text" ng-model="doc.name">
+    </p>
+    <p>age :
+        <input type="text" ng-model="doc.age">
+    </p>
+    <p>salary :
+        <input type="text" ng-model="doc.sal">
+    </p>
+    <p>
+        <button ng-click="save()">Add Docs</button>
+    </p>
+    <table class="table">
+        <th>Index</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Action</th>
+        <tr ng-repeat="x in docs">
+            <td>{{$index}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.sal}}</td>
+            <td>
+                <button ng-click="delete($index)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+
+    $scope.delete = function(x) {
+        $scope.docs.splice(x, 1)
+    }
+
+
+    $scope.save = function() {
+        console.log(JSON.stringify($scope.docs));
+        $scope.docs.push($scope.doc)
+
+    }
+
+
+    $scope.docs = [{
+            name: 'Sunil',
+            age: 22,
+            sal: 222000
+        }
+
+    ];
+
+
+    $scope.doc = {};
+});
+</script>
+</html>

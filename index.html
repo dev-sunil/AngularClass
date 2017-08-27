@@ -1,0 +1,160 @@
+d<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<!-- <body ng-app="" ng-init="docs=[
+{
+  id:1,
+  name:'Harish',
+  age:20,
+  specialist:
+  {
+  abc:'kdjaslkdjakl',
+  xyz:'kdjaslkdjakl'
+  }
+},
+{ 
+  id:2,
+  name:'John',
+  age:30,
+    specialist:
+  {
+  abc:'kdjaslkdjakl',
+  xyz:'kdjaslkdjakl'
+  }
+  },
+{  
+  id:3,
+  name:'Deo',
+  age:35,
+    specialist:
+  {
+  abc:'kdjaslkdjakl',
+  xyz:'kdjaslkdjakl'
+  }
+  },
+{ 
+  id:4,
+  name:'Luis',
+  age:50,
+    specialist:
+  {
+  abc:'kdjaslkdjakl',
+  xyz:'kdjaslkdjakl'
+  }
+  },
+{ 
+  id:5,
+  name:'Jfdf',
+  age:60,
+    specialist:
+  {
+  abc:'kdjaslkdjakl222',
+  xyz:'kdjaslkdjakl'
+  }
+  },
+{ 
+  id:6,
+  name:'Akhila',
+  age:24,
+    specialist:
+  {
+  abc:'kdjaslkdjakl333',
+  xyz:'kdjaslkdjakl333'
+  }
+  }
+
+  ]">
+    <table class="table">
+        <thead>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Specialist</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in docs">
+                <th>{{x.id}}</th>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.specialist.abc}}<br>{{x.specialist.xyz}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body> -->
+
+
+<body ng-app="" ng-init="docs=[
+{
+  'id':1,
+  'name':'Harish',
+  'age':20,
+  'contact':[
+  {'type':'mob', 'value':'3232322323'},
+  {'type':'email', 'value':'xyz@mail.com'}
+  ]
+
+},
+{ 
+  'id':2,
+  'name':'John',
+  'age':30,
+    'contact':[
+  {'type':'mob', 'value':'3232322323'},
+  {'type':'email', 'value':'xyz@mail.com'}
+  ]
+  },
+{  
+  'id':3,
+  'name':'Deo',
+  'age':35
+  },
+{ 
+  'id':4,
+  'name':'Luis',
+  'age':50
+  },
+{ 
+  'id':5,
+  'name':'Jfdf',
+  'age':60
+  },
+{ 
+  'id':6,
+  'name':'Akhila',
+  'age':24
+  }
+
+  ];">
+    <table class="table">
+        <thead>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>contact</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in docs">
+                <th>{{x.id}}</th>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>
+                <p ng-repeat="y in x.contact">
+                    <span>{{y.type}} : {{y.value}}</span>
+                </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+
+
+</html>

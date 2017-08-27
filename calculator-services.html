@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <style>
+    span {
+        color: ;
+    }
+    </style>
+</head>
+
+<body ng-app="eshop" ng-controller="eshopController">
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.service('Calculator', function() {
+    this.add = function(a, b) {
+        return (a + b);
+    }
+
+    this.subtract = function(a, b) {
+      return (a-b);
+    }
+});
+
+
+app.controller('eshopController', function ($scope, Calculator) {
+ var t1 = Calculator.add(1,2)
+ var t2 = Calculator.subtract(1,10)
+ console.log('SUm = '+t1+ 'subtract  = '+t2)
+});
+</script>
+
+</html>

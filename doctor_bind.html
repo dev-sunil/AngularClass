@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <style>
+      
+      span{
+        color:;
+      }
+    </style>
+</head>
+
+<body ng-app="eshop" ng-controller="eshopController">
+
+    <p>Id :
+        <input type="text" ng-model="docs.id">
+        <span>{{docs.id}}</span>
+    </p>
+    <p>name :
+        <input type="text" ng-model="docs.name">
+        <span>{{docs.name}}</span>
+
+    </p>
+    <p>salary :
+        <input type="text" ng-model="docs.salary">
+        <span>{{docs.salary}}</span>
+
+    </p>
+    <p>speciality :
+        <input type="text" ng-model="docs.speciality">
+        <span>{{docs.speciality}}</span>
+
+    </p>
+
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+
+    $scope.docs = {
+            id: 01,
+            name: 'Sunil',
+            salary: 2000,
+            speciality: 'cardio'
+        }
+
+   
+
+
+});
+</script>
+
+</html>

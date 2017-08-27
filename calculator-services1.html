@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+
+<body ng-app="salary" ng-controller="salaryCtrl">
+    <p>Basic Salary :
+        <input type="text" ng-model="bs">
+    </p>
+    <!--     <p>Gross salary :
+        <input type="text" ng-model="gs">
+    </p> -->
+    <p>Gross Salara : {{gross}}</p>
+    <button ng-click="Calculator">Result</button>
+</body>
+<script>
+var app = angular.module('salary', []);
+app.service('GrossService', function() {
+
+    this.gteSalary = function(bs) {
+        var.da = bs * 6 / 100;
+        var.hra = bs * 6 / 100;
+        var.ta = bs * 6 / 100;
+        return bs+hra-ta
+    }
+
+});
+
+
+app.controller('Salary', function ($scope,GrossService) {
+    
+})
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src=".bootstrap.min.js"></script>
+    <script src="./js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+
+<body ng-app="eshop" ng-controller="eshopController">
+   <p>Frist name : <input ng-model="a"></p>
+   <p>Last name : <input ng-model="b"></p>
+
+   <p>
+   	<button ng-click="add()">Add nummbers</button>
+   </p>
+
+
+</body>
+<script>
+var app = angular.module('eshop', []);
+app.controller('eshopController', function($scope) {
+    // body...
+$scope.add = function () {
+	// body...
+	var t1 = parseInt($scope.a);
+	var t2 = parseInt($scope.b);
+alert(t1+t2);
+}
+
+
+});
+</script>
+
+</html>
